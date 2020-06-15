@@ -21,7 +21,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Install/Node.js
+    - name: Install/Node.JS
       uses: actions/setup-node@v2-beta
       with: 
         node--version: 12
@@ -37,9 +37,3 @@ jobs:
      
    - name: Deploy to Surge
      run: surge ./build kh2bootcamp2020.surge.sh/  ${{ secrets.Surge_Token }}
-          
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
