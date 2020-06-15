@@ -22,18 +22,18 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: Install/Node.JS
-      uses: actions/setup--node@v2-beta
+      uses: actions/setup-node@v2-beta
       with: 
         node--version: 12
-        
-   - uses: borales/actions-yarn@v2.0.0
-     with:
-        cmd: install # will run `yarn install` command
+
+  - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: Install # will run `yarn install` command
    - name: Build React App
-     run: yarn build
-     
+      run: yarn build
+      
    - name: Install Surge
      run: npm install --global surge
      
    - name: Deploy to Surge
-     run: surge ./build kh2bootcamp2020.surge.sh/  ${{ secrets.Surge_Token }}
+     run: surge ./build kh2bootcamp2020.surge.sh/  ${{ secrets.SURGE_TOKEN }} 
